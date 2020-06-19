@@ -21,3 +21,7 @@ ADD CONSTRAINT `fk_emprestimos_usuario`
 
 /* Criando ENUM de situacao na coluna livros */
 ALTER TABLE `ebiblioteca`.`livros` CHANGE COLUMN `situacao` ENUM('Disponivel', 'Excluido') NOT NULL DEFAULT 'Disponivel' ;
+
+/* Criando index */
+ALTER TABLE `ebiblioteca`.`livros` 
+ADD INDEX `idx_titulo` (`titulo` ASC);
