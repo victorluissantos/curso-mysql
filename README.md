@@ -37,9 +37,10 @@ Worbench: https://dev.mysql.com/downloads/workbench/
 				Primeira
 			</td>
 			<td>
-				SELECT, FROM, INSERT, UPDATE, CREATE TABLE, USE, DATE_ADD, INTERVAL<br>
+				SELECT, FROM, INSERT, UPDATE, CREATE TABLE, USE, DATE_ADD, INTERVAL, SUM, GROUP BY, ORDER BY, NOW<br>
 				Datatype: INT, Varchar, Date e Datetime<br/>
-				Auto Increment, Not Null, Primary Key (PK)
+				Auto Increment, Not Null, Primary Key (PK), CASCATE<br/>
+				INDEX - IDX, CURRENT_TIMESTAMP
 			</td>
 			<td>
 				ebibliotecas
@@ -50,12 +51,11 @@ Worbench: https://dev.mysql.com/downloads/workbench/
 				Segunda
 			</td>
 			<td>
-				SELECT, FROM, INSERT, UPDATE, CREATE TABLE, USE, DATE_ADD, INTERVAL<br>
-				Datatype: DECIMAL, FLOAT<br/>
-				INDEX
+				SUBSTRING_INDEX, CONCAT, MD5, LIMIT, DISTINCT, LIKE, FUNCTION, VIEW<br>
+				Datatype: DECIMAL, FLOAT, ENUM<br/>
 			</td>
 			<td>
-				epesquisatudo
+				pesquisatudo
 			</td>
 		</tr>
 		<tr>
@@ -63,7 +63,7 @@ Worbench: https://dev.mysql.com/downloads/workbench/
 				Terceira
 			</td>
 			<td>
-				TRIGGER, PROCEDURE<br>
+				TRIGGER, PROCEDURE <br>
 				Datatype: ENUM
 			</td>
 			<td>

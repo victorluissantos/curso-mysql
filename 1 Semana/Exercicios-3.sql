@@ -75,7 +75,6 @@ ORDER BY 6 DESC
 LIMIT 1;
 
 /* 4. Qual o usuario com o maior valor de multa em aberto */
-
 SELECT 
     u.nome,
     SUM((SELECT 
@@ -93,3 +92,21 @@ WHERE
 GROUP BY u.nome
 ORDER BY 2 DESC
 limit 1;
+
+/* 5. Qual o livro que tem o maior numero de multa */
+SELECT 
+    count(l.id) as 'total',
+    l.titulo
+FROM
+    livros l
+    INNER JOIN
+    emprestimos e ON l.id=e.livro_id
+WHERE
+    (e.data_entrega is null
+    AND
+    DATE_ADD(e.data_retirada, INTERVAL 3 DAY) < NOW())
+    OR
+    (DATE_ADD(e.data_retirada, interval 3 DAY) < e.data_entrega)
+GROUP BY l.titulo
+ORDER BY 1 DESC
+LIMIT 1
