@@ -80,3 +80,58 @@ SELECT
     concat(u.login, ' | ', u.senha) as 'concatenando colunas'
 FROM
     usuarios u;
+
+/* Criando a Funcao de soma */
+USE `pesquisatudo`;
+DROP function IF EXISTS `soma`;
+
+DELIMITER $$
+USE `pesquisatudo`$$
+
+
+CREATE FUNCTION `soma` (x int, y int)
+RETURNS INTEGER
+BEGIN
+  DECLARE resultado INT;
+    SET resultado = x+y;
+  RETURN resultado;
+END$$
+
+DELIMITER ;
+
+/* Criando um IF no SELECT */
+SELECT
+    id,
+    usuario_id,
+    placa,
+    IF(retorno is null,'Sem retorno', retorno) as 'retorno',
+    data_consulta
+FROM
+    consultas
+
+
+/*
+ usando funcao, adicione uma coluna chamada creditos, com a soma da quantidade de creditos aprovados em transacoes
+*/
+
+USE `pesquisatudo`;
+DROP FUNCTION IF EXISTS `getCreditos`;
+
+DELIMITER $$
+USE `pesquisatudo` $$
+
+CREATE FUNCTION `getCreditos`(usuario_id INT)
+RETURNS INTEGER
+BEGIN
+  DECLARE creditos INT;
+    SET creditos = (SELECT 
+            SUM(t.qt_consultas)
+          FROM
+            transacoes t
+          WHERE
+            t.usuario_id = usuario_id
+            AND
+            t.situacao = 'Aprovado');
+  RETURN creditos;
+END$$
+DELIMITER ; 
