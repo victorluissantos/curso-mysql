@@ -43,9 +43,25 @@ CREATE TABLE `consultas` (
 
 LOCK TABLES `consultas` WRITE;
 /*!40000 ALTER TABLE `consultas` DISABLE KEYS */;
-INSERT INTO `consultas` VALUES (1,1,'ATO-6461',NULL,'2020-06-20 17:12:58'),(2,1,'ATO-6461',NULL,'2020-06-12 17:12:58'),(3,1,'ATO-6461',NULL,'2020-06-12 17:12:58'),(4,2,'RLA-6102',NULL,'2020-06-12 17:18:58'),(5,2,'ATO-6991',NULL,'2020-06-13 17:14:58'),(6,4,'MLO-6461',NULL,'2020-05-20 17:13:58'),(7,4,'ATD-6461',NULL,'2020-05-14 17:19:58'),(8,5,'ATO-6461',NULL,'2020-04-20 17:10:58'),(9,3,'AGO-6462',NULL,'2020-04-17 17:10:58'),(10,1,'www-6461',NULL,'2020-03-19 17:11:58'),(11,2,'ATO-1461',NULL,'2020-03-20 17:12:58'),(12,3,'ATO-6461',NULL,'2020-02-20 17:13:58'),(13,1,'RSO-6461',NULL,'2020-02-23 17:14:58'),(14,2,'www-2000',NULL,'2020-01-28 17:15:58'),(15,5,'ATO-3461',NULL,'2020-01-30 17:16:58'),(16,5,'APU-6461',NULL,'2020-06-20 17:17:58'),(17,3,'ATO-6461',NULL,'2020-05-20 17:18:58'),(18,2,'ATJ-9461',NULL,'2020-04-20 17:19:58'),(19,2,'DGU-6461',NULL,'2020-01-20 17:20:58'),(20,3,'ATU-6961',NULL,'2020-02-20 17:22:58'),(21,3,'ATO-6468',NULL,'2020-03-20 17:24:58'),(22,2,'DHP-6461',NULL,'2020-05-20 17:30:58'),(23,1,'API-6461',NULL,'2020-06-20 17:12:58'),(24,1,'APP-6461',NULL,'2020-02-20 17:32:58'),(25,5,'AMO-6461',NULL,'2020-01-20 19:12:58'),(26,5,'MMO-6461',NULL,'2020-06-20 17:12:58'),(27,2,'SPO-6468',NULL,'2020-06-20 17:12:58'),(28,2,'ATO-6467',NULL,'2020-06-20 17:12:58'),(29,3,'ATO-6466',NULL,'2020-02-21 18:12:58'),(30,5,'ATO-6465',NULL,'2020-06-20 17:12:58'),(31,3,'MMO-0094',NULL,'2020-06-22 17:12:58'),(32,3,'ATO-6463',NULL,'2020-06-20 17:12:58'),(33,4,'ATO-6462',NULL,'2020-06-20 17:12:58'),(34,1,'ATO-6461',NULL,'2020-06-20 17:12:58'),(35,1,'ATO-6460',NULL,'2020-06-20 17:12:58'),(36,3,'ATO-6469',NULL,'2020-06-20 17:12:58'),(37,1,'ATO-6468',NULL,'2020-06-20 11:12:58'),(38,1,'ATO-6467',NULL,'2020-06-20 17:12:58'),(39,5,'ATO-6466',NULL,'2020-06-16 12:12:58'),(40,1,'ATO-6465',NULL,'2020-06-20 17:12:58'),(41,2,'ATO-6464',NULL,'2020-06-20 12:12:58'),(42,2,'ATO-6463',NULL,'2020-04-20 17:12:58'),(43,1,'PRS-6462',NULL,'2020-03-20 13:12:58'),(44,5,'SSH-6461',NULL,'2020-06-19 17:12:58'),(45,4,'ATO-6460',NULL,'2020-02-20 14:12:58'),(46,3,'ATO-6469',NULL,'2020-01-27 17:12:58'),(47,3,'PTO-6468',NULL,'2020-06-20 16:12:58'),(48,1,'ATO-6467',NULL,'2020-09-28 17:12:58'),(49,1,'PSD-6466',NULL,'2020-06-20 17:12:58'),(50,5,'MBA-6467',NULL,'2020-04-29 17:12:58'),(51,5,'ATO-6466',NULL,'2020-06-20 17:12:58'),(52,1,'KKK-6465',NULL,'2020-06-20 17:12:58');
+INSERT INTO `consultas` VALUES (1,1,'ATO-6461',NULL,'2020-06-20 17:12:58'),(2,1,'ATO-6461','{[statuscode:200]}','2020-06-12 17:12:58'),(3,1,'ATO-6461',NULL,'2020-06-12 17:12:58'),(4,2,'RLA-6102',NULL,'2020-06-12 17:18:58'),(5,2,'ATO-6991',NULL,'2020-06-13 17:14:58'),(6,4,'MLO-6461',NULL,'2020-05-20 17:13:58'),(7,4,'ATD-6461',NULL,'2020-05-14 17:19:58'),(8,5,'ATO-6461',NULL,'2020-04-20 17:10:58'),(9,3,'AGO-6462',NULL,'2020-04-17 17:10:58'),(10,1,'www-6461',NULL,'2020-03-19 17:11:58'),(11,2,'ATO-1461',NULL,'2020-03-20 17:12:58'),(12,3,'ATO-6461',NULL,'2020-02-20 17:13:58'),(13,1,'RSO-6461',NULL,'2020-02-23 17:14:58'),(14,2,'www-2000',NULL,'2020-01-28 17:15:58'),(15,5,'ATO-3461',NULL,'2020-01-30 17:16:58'),(16,5,'APU-6461',NULL,'2020-06-20 17:17:58'),(17,3,'ATO-6461',NULL,'2020-05-20 17:18:58'),(18,2,'ATJ-9461',NULL,'2020-04-20 17:19:58'),(19,2,'DGU-6461',NULL,'2020-01-20 17:20:58'),(20,3,'ATU-6961',NULL,'2020-02-20 17:22:58'),(21,3,'ATO-6468',NULL,'2020-03-20 17:24:58'),(22,2,'DHP-6461',NULL,'2020-05-20 17:30:58'),(23,1,'API-6461',NULL,'2020-06-20 17:12:58'),(24,1,'APP-6461',NULL,'2020-02-20 17:32:58'),(25,5,'AMO-6461',NULL,'2020-01-20 19:12:58'),(26,5,'MMO-6461',NULL,'2020-06-20 17:12:58'),(27,2,'SPO-6468',NULL,'2020-06-20 17:12:58'),(28,2,'ATO-6467',NULL,'2020-06-20 17:12:58'),(29,3,'ATO-6466',NULL,'2020-02-21 18:12:58'),(30,5,'ATO-6465',NULL,'2020-06-20 17:12:58'),(31,3,'MMO-0094',NULL,'2020-06-22 17:12:58'),(32,3,'ATO-6463',NULL,'2020-06-20 17:12:58'),(33,4,'ATO-6462',NULL,'2020-06-20 17:12:58'),(34,1,'ATO-6461',NULL,'2020-06-20 17:12:58'),(35,1,'ATO-6460',NULL,'2020-06-20 17:12:58'),(36,3,'ATO-6469',NULL,'2020-06-20 17:12:58'),(37,1,'ATO-6468',NULL,'2020-06-20 11:12:58'),(38,1,'ATO-6467',NULL,'2020-06-20 17:12:58'),(39,5,'ATO-6466',NULL,'2020-06-16 12:12:58'),(40,1,'ATO-6465',NULL,'2020-06-20 17:12:58'),(41,2,'ATO-6464',NULL,'2020-06-20 12:12:58'),(42,2,'ATO-6463',NULL,'2020-04-20 17:12:58'),(43,1,'PRS-6462',NULL,'2020-03-20 13:12:58'),(44,5,'SSH-6461',NULL,'2020-06-19 17:12:58'),(45,4,'ATO-6460',NULL,'2020-02-20 14:12:58'),(46,3,'ATO-6469',NULL,'2020-01-27 17:12:58'),(47,3,'PTO-6468',NULL,'2020-06-20 16:12:58'),(48,1,'ATO-6467',NULL,'2020-09-28 17:12:58'),(49,1,'PSD-6466',NULL,'2020-06-20 17:12:58'),(50,5,'MBA-6467',NULL,'2020-04-29 17:12:58'),(51,5,'ATO-6466',NULL,'2020-06-20 17:12:58'),(52,1,'KKK-6465',NULL,'2020-06-20 17:12:58');
 /*!40000 ALTER TABLE `consultas` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Temporary table structure for view `time_last`
+--
+
+DROP TABLE IF EXISTS `time_last`;
+/*!50001 DROP VIEW IF EXISTS `time_last`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE VIEW `time_last` AS SELECT 
+ 1 AS `id`,
+ 1 AS `usuario_id`,
+ 1 AS `placa`,
+ 1 AS `retorno`,
+ 1 AS `data_consulta`*/;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Table structure for table `transacoes`
@@ -115,6 +131,243 @@ UNLOCK TABLES;
 --
 -- Dumping routines for database 'pesquisatudo'
 --
+/*!50003 DROP FUNCTION IF EXISTS `getBoletoPorcent` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`%` FUNCTION `getBoletoPorcent`() RETURNS decimal(4,2)
+BEGIN
+	RETURN (SELECT 
+				(count(t.id)*100)/(SELECT count(ta.id) FROM transacoes ta) as 'porcentagem'
+			FROM
+				transacoes t
+			WHERE
+				t.bandeira='Boleto'
+			GROUP BY t.bandeira);
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP FUNCTION IF EXISTS `getCreditos` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`%` FUNCTION `getCreditos`(usuario_id INT) RETURNS int(11)
+BEGIN
+	DECLARE creditos INT;
+	SET creditos = (SELECT 
+						SUM(t.qt_consultas)
+					FROM
+						transacoes t
+					WHERE
+						t.usuario_id = usuario_id
+						AND
+						t.situacao = 'Aprovado');
+	RETURN creditos;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP FUNCTION IF EXISTS `GetMediaHoraConsulta` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`%` FUNCTION `GetMediaHoraConsulta`() RETURNS decimal(4,2)
+BEGIN
+
+	RETURN (SELECT 
+				SUM(HOUR(data_consulta)) / (SELECT 
+						COUNT(co.id)
+					FROM
+						consultas co) AS 'media_hora'
+			FROM
+				consultas c);
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP FUNCTION IF EXISTS `getPorcentBoleto` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`%` FUNCTION `getPorcentBoleto`(usu_id int) RETURNS decimal(4,2)
+BEGIN
+	DECLARE resultado INT;
+    SET resultado = (SELECT 
+						(count(t.bandeira)*100)/(SELECT 
+								COUNT(tr.id)
+							FROM
+								transacoes tr
+							WHERE
+								tr.usuario_id=usu_id)
+					FROM
+						transacoes t
+					WHERE
+						t.usuario_id = usu_id
+						AND
+						bandeira='Boleto'
+					GROUP BY t.bandeira);
+	RETURN resultado;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP FUNCTION IF EXISTS `getQtdPayCard` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`%` FUNCTION `getQtdPayCard`(usuario int) RETURNS int(11)
+BEGIN
+	DECLARE resultado int;
+    SET resultado = (SELECT 
+						count(t.id) as 'total'
+					FROM
+						transacoes t
+					WHERE
+						t.bandeira <> 'Boleto'
+						and
+						t.usuario_id = usuario);
+                        
+	RETURN resultado;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP FUNCTION IF EXISTS `getQtdTransacao` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`%` FUNCTION `getQtdTransacao`(usuario_id INT) RETURNS int(11)
+BEGIN
+	DECLARE resultado INT;
+    SET resultado = (SELECT 
+						count(t.id) as 'total'
+					FROM
+						transacoes t
+					WHERE
+						t.usuario_id = usuario_id
+						AND
+						t.situacao = 'Pendente');
+	RETURN resultado;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP FUNCTION IF EXISTS `getTransacRecusadaByUser` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`%` FUNCTION `getTransacRecusadaByUser`(usu_id INT) RETURNS int(11)
+BEGIN
+	DECLARE resultado INT;
+    SET resultado = (SELECT 
+						count(t.id)
+					FROM
+						transacoes t
+					WHERE
+						t.situacao='Recusado'
+						AND
+						t.usuario_id=usu_id);
+RETURN resultado;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP FUNCTION IF EXISTS `soma` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`%` FUNCTION `soma`(x int, y int) RETURNS int(11)
+BEGIN
+	DECLARE resultado INT;
+    SET resultado = x+y;
+	RETURN resultado;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+
+--
+-- Final view structure for view `time_last`
+--
+
+/*!50001 DROP VIEW IF EXISTS `time_last`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`%` SQL SECURITY DEFINER */
+/*!50001 VIEW `time_last` AS (select `c`.`id` AS `id`,`c`.`usuario_id` AS `usuario_id`,`c`.`placa` AS `placa`,`c`.`retorno` AS `retorno`,`c`.`data_consulta` AS `data_consulta` from `consultas` `c` where (hour(`c`.`data_consulta`) <= curtime())) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -125,4 +378,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-06-22 21:55:31
+-- Dump completed on 2020-06-24 20:14:24
