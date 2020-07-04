@@ -109,13 +109,194 @@ CREATE VIEW `pgto`.`insc_prosps` AS
 -- call result
 SELECT i.* FROM insc_prosps i
 
-/**
-	
-    4. Qual a moda de idade da tabela inscricoes - function
-    5. qual a moda de idade da tabela prospects - function
-    6. qual a moda de idade das tabelas juntas, inscricoe e prospect - function
-    7. Trigger, Todo nome e email inserido na tabela inscricoe seja atualizado para caixa alta ( upper() )
-	8. Trigger, Todo nome e email inserido na tabela prospect seja atualizado para caixa alta ( upper() )
+-- 4. Qual a moda de idade da tabela inscricoes - function
+-- Query / line
+SELECT 
+    YEAR(CURDATE()) - YEAR(i.data_nascimento) AS 'idade',
+    count(i.id) as 'total'
+FROM
+    inscricoes i
+WHERE
+    YEAR(i.data_nascimento) <> '0000'
+    AND
+    i.data_nascimento IS NOT NULL
+GROUP BY 1;
+-- create view
+USE `pgto`;
+CREATE  OR REPLACE VIEW `getModaIdadeInsc` AS (SELECT 
+    YEAR(CURDATE()) - YEAR(i.data_nascimento) AS 'idade',
+    count(i.id) as 'total'
+FROM
+    inscricoes i
+WHERE
+    YEAR(i.data_nascimento) <> '0000'
+    AND
+    i.data_nascimento IS NOT NULL
+GROUP BY 1);
+-- Create function
+USE `pgto`;
+DROP function IF EXISTS `get_moda_idade_insc`;
 
--- Dicas: date_formta, distinct, group by, order by
-*/
+DELIMITER $$
+USE `pgto`$$
+CREATE FUNCTION `get_moda_idade_insc` ()
+RETURNS INTEGER
+BEGIN
+    DECLARE moda INT;
+    SET moda = (SELECT idade FROM getModaIdadeInsc ORDER BY total desc LIMIT 1);
+RETURN moda;
+END$$
+
+DELIMITER ;
+
+-- call function
+SELECT GET_MODA_IDADE_INSC();
+
+
+-- 5. qual a moda de idade da tabela prospects - function
+-- Line Code
+SELECT 
+    count(p.id) as 'total',
+    YEAR(curdate()) - YEAR(p.data_nascimento) as 'idade'
+FROM
+    prospects p
+WHERE
+    p.data_nascimento <> '0000-00-00'
+    AND
+    p.data_nascimento is not null
+GROUP BY 2;
+-- create view
+USE `pgto`;
+CREATE  OR REPLACE VIEW `moda_idade_prospect` AS (SELECT 
+                                            count(p.id) as 'total',
+                                            YEAR(curdate()) - YEAR(p.data_nascimento) as 'idade'
+                                        FROM
+                                            prospects p
+                                        WHERE
+                                            p.data_nascimento <> '0000-00-00'
+                                            AND
+                                            p.data_nascimento is not null
+                                        GROUP BY 2);
+-- create function
+USE `pgto`;
+DROP function IF EXISTS `get_moda_idade_prospect`;
+
+DELIMITER $$
+USE `pgto`$$
+CREATE FUNCTION `get_moda_idade_prospect` ()
+RETURNS INTEGER
+BEGIN
+    DECLARE moda INT;
+    SET moda = (SELECT idade FROM moda_idade_prospect order by total DESC LIMIT 1);
+    RETURN moda;
+END$$
+
+DELIMITER ;
+
+-- call function
+select get_moda_idade_prospect();
+
+-- 6. qual a moda de idade das tabelas juntas, inscricoe e prospect - function
+-- create union
+(
+    SELECT 
+    i.id,
+    i.data_nascimento,
+    YEAR(curdate()) - YEAR(i.data_nascimento) as 'idade'
+FROM
+    inscricoes i
+WHERE
+    YEAR(i.data_nascimento) <> '0000'
+        AND i.data_nascimento IS NOT NULL
+        ) 
+    UNION
+(
+    SELECT
+    p.id,
+    p.data_nascimento,
+    YEAR(curdate()) - YEAR(p.data_nascimento) as 'idade'
+FROM
+    prospects p
+WHERE
+    YEAR(p.data_nascimento) <> '0000'
+        AND p.data_nascimento IS NOT NULL
+);
+-- Create View
+USE `pgto`;
+CREATE  OR REPLACE VIEW `uniaoProspectInscricoe` AS
+(SELECT 
+    i.id,
+    i.data_nascimento,
+    YEAR(curdate()) - YEAR(i.data_nascimento) as 'idade'
+FROM
+    inscricoes i
+WHERE
+    YEAR(i.data_nascimento) <> '0000'
+        AND i.data_nascimento IS NOT NULL) 
+UNION (SELECT
+    p.id,
+    p.data_nascimento,
+    YEAR(curdate()) - YEAR(p.data_nascimento) as 'idade'
+FROM
+    prospects p
+WHERE
+    YEAR(p.data_nascimento) <> '0000'
+        AND p.data_nascimento IS NOT NULL);
+-- call view
+SELECT 
+    count(u.id),
+    idade
+FROM
+    uniaoProspectInscricoe u
+GROUP BY u.idade;
+-- create function
+USE `pgto`;
+DROP function IF EXISTS `getModaIdadeGeral`;
+
+DELIMITER $$
+USE `pgto`$$
+CREATE FUNCTION `getModaIdadeGeral`() RETURNS int(11)
+BEGIN
+    DECLARE idade INT;
+    SET idade = (SELECT 
+                    u.idade
+                FROM
+                    uniaoProspectInscricoe u
+                GROUP BY u.idade
+                ORDER BY count(u.id) DESC
+                LIMIT 1);
+RETURN idade;
+END$$
+
+DELIMITER ;
+-- call function
+SELECT GETMODAIDADEGERAL();
+
+-- 7. Trigger, Todo nome e email inserido na tabela inscricoe seja atualizado para caixa alta ( upper() )
+CREATE TRIGGER `pgto`.`inscricoes_BEFORE_INSERT` BEFORE INSERT ON `inscricoes` FOR EACH ROW
+BEGIN
+    SET NEW.nome = upper(NEW.nome);
+    SET NEW.email = upper(NEW.email);
+END
+
+-- 8. Trigger, Todo nome e email inserido na tabela prospects seja atualizado para caixa alta ( upper() )
+CREATE DEFINER=`root`@`%` TRIGGER `pgto`.`prospects_BEFORE_INSERT` BEFORE INSERT ON `prospects` FOR EACH ROW
+BEGIN
+    SET NEW.nome = upper(NEW.nome);
+    SET NEW.email = upper(NEW.email);
+END;
+
+-- 9. Trigger AO atualizar  um registro na tabela inscricoes, eixar nome e email em upper()
+CREATE DEFINER=`root`@`%` TRIGGER `pgto`.`inscricoes_BEFORE_UPDATE` BEFORE UPDATE ON `inscricoes` FOR EACH ROW
+BEGIN
+    SET new.nome=upper(NEW.nome);
+    SET new.email=upper(NEW.email);
+END
+
+-- 10. Trigger AO atualizar  um registro na tabela prospects, eixar nome e email em upper()
+
+CREATE DEFINER=`root`@`%` TRIGGER `pgto`.`prospects_BEFORE_UPDATE` BEFORE UPDATE ON `prospects` FOR EACH ROW
+BEGIN
+    SET new.nome=upper(NEW.nome);
+    SET new.email=upper(NEW.email);
+END

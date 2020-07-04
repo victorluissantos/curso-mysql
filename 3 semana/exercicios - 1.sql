@@ -46,3 +46,10 @@ BEGIN
         AND
         new.situacao='vencida';
 END
+
+-- 9. Trigger AO atualizar  um registro na tabela inscricoes, eixar nome e email em upper()
+CREATE TRIGGER `pgto`.`inscricoes_BEFORE_UPDATE` BEFORE UPDATE ON `inscricoes` FOR EACH ROW
+BEGIN
+	SET new.nome=upper(NEW.nome);
+    SET new.email=upper(NEW.email);
+END
