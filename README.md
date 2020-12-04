@@ -39,9 +39,6 @@ Worbench: https://dev.mysql.com/downloads/workbench/
 				Auto Increment, Not Null, Primary Key (PK), CASCATE<br/>
 				INDEX - IDX, CURRENT_TIMESTAMP
 			</td>
-			<td>
-				ebibliotecas
-			</td>
 		</tr>
 		<tr>
 			<td>
@@ -51,9 +48,6 @@ Worbench: https://dev.mysql.com/downloads/workbench/
 				SUBSTRING_INDEX, CONCAT, MD5, LIMIT, DISTINCT, LIKE, FUNCTION, VIEW<br>
 				Datatype: DECIMAL, FLOAT, ENUM<br/>
 			</td>
-			<td>
-				pesquisatudo
-			</td>
 		</tr>
 		<tr>
 			<td>
@@ -62,9 +56,6 @@ Worbench: https://dev.mysql.com/downloads/workbench/
 			<td>
 				TRIGGER, PROCEDURE <br>
 				Datatype: ENUM
-			</td>
-			<td>
-				guiadarevisao
 			</td>
 		</tr>
 	</tbody>
