@@ -1,5 +1,5 @@
 ## Curso MySQL ##
-Bases de dados e exercicios, dividios por semana de curso que ministrei
+Bases de dados e exercícios do curso que ministrei
 
 ### Requisitos:
 MySQL: 5.4 a 5.6
@@ -25,9 +25,6 @@ Worbench: https://dev.mysql.com/downloads/workbench/
 			</td>
 			<td>
 				Comandos
-			</td>
-			<td>
-				Base
 			</td>
 		</th>
 	</thead>
