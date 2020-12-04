@@ -19,14 +19,14 @@ Worbench: https://dev.mysql.com/downloads/workbench/
 
 <table>
 	<thead>	
-		<th>
+		<tr>
 			<td>
 				<b>Semana</b>
 			</td>
 			<td>
-				Comandos
+				<b>Comandos</b>
 			</td>
-		</th>
+		</tr>
 	</thead>
 	<tbody>
 		<tr>
